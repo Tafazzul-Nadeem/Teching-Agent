@@ -1,4 +1,5 @@
-block_examples = """Example 1:
+mermaid_example = {
+    "Block" : """Example 1:
 ```mermaid
 block-beta
 columns 4
@@ -42,9 +43,9 @@ columns 3
     ForeignSector --> Markets
     Banks --> Firms
 ```
-"""
+""",
 
-packet_examples = """Example 1:
+"Packet" : """Example 1:
 ```mermaid
 packet-beta
     0-7: "Flag"
@@ -83,3 +84,4 @@ packet-beta
     160-191: "Target Protocol Address"
 ```
 """
+}
