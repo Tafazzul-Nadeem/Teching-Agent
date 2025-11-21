@@ -13,6 +13,8 @@ node-edge-node triplets present in the diagram.
 Given an image containing a Block diagram and names of the blocks, extract the 
 edges and the edge labels of the diagram.
 
+Entity Names: {entity_names}
+
 <Rules>
 Rule 1: Scan the image from Left to Right and Top to Bottom.
 Rule 2: Identify the number of edges present in the diagram.
@@ -41,6 +43,8 @@ node-edge-node triplets present in the diagram.
 
 Given an image containing a C4 diagram and names of the entities, extract the 
 edges and the edge labels of the diagram.
+
+Entity Names: {entity_names}
 
 <Rules>
 Rule 1: Scan the image from Left to Right and Top to Bottom.

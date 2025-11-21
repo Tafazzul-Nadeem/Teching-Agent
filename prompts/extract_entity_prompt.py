@@ -7,6 +7,7 @@ Given an image containing a Block diagram, extract the names of all blocks prese
 in the diagram.
 
 Return your result strictly as a JSON with the keys:
+- "n_entities": Number of blocks present in the Block diagram.
 - "entity_names": A list of all block names present in the Block diagram.
 """,
 
@@ -16,6 +17,7 @@ Given an image containing a C4 diagram, extract the details of all the entities
 present in the diagram.
 
 Return your result strictly as a JSON with the keys:
+- "n_entities": Number of entities present in the C4 diagram.
 - "entity_names": A list of name of all the entities present in the C4 diagram.
 - "entity_details": A list of entities and its details in the format 
 "entity_type (present at the top of each entity) - entity_name - entity_description".
@@ -24,12 +26,16 @@ For example: ["Person - Event Manager - Organizes the event",
 """,
 
 # Class Diagram
-    "Class" : """You are an expert in extracting text from images.
-Given an image containing a Class diagram, extract the details of all the classes present 
-in the diagram.
+    "Class" : """You are an expert in extracting details of Class diagrams from images.
+Given an image containing a Class diagram, extract the names and details of all 
+the classes present in the diagram.
 
 Return your result strictly as a JSON with the keys:
-- "entity_names": A list of all system names present in the Class diagram.
+- "n_entities": Number of entities present in the Class diagram.
+- "entity_names": A list of all class names present in the Class diagram.
+- "entity_details": A list of classes and its details in the format 
+"class_name - attributes - methods".
+For example: ["Engine - Attributes: +capacity: float, +number-of-cylinders: int - Methods: +start(), +brake(), +accelerate()" ]
 """,
 
 # Flowchart Diagram
@@ -38,6 +44,7 @@ Given an image containing a Flowchart diagram, extract the names of all nodes pr
 in the diagram.
 
 Return your result strictly as a JSON with the keys:
+- "n_entities": Number of entities present in the Flowchart diagram.
 - "entity_names": A list of all node names present in the Flowchart diagram.
 """,
 
