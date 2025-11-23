@@ -45,6 +45,7 @@ There is a clear time order of the messages from top to bottom.
 
 State: A diagram that represents the states of a system and the transitions between those states.
 The states are represented as rounded rectangles and the transitions as arrows connecting the states.
-There might be Start and End states in the diagram.
+There might be Start and End state in the diagram represented by a solid circle 
+and black solid circle with a border like ● and ◎ respectively.
 </Rules>
 """

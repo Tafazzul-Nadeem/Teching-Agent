@@ -31,9 +31,9 @@ Given an image containing a Class diagram, extract the names and details of all
 the classes present in the diagram.
 
 Return your result strictly as a JSON with the keys:
-- "n_entities": Number of entities present in the Class diagram.
-- "entity_names": A list of all class names present in the Class diagram.
-- "entity_details": A list of classes and its details in the format 
+- "n_entities": Number of classes present in the Class diagram.
+- "entity_names": A list of all the class names present in the Class diagram.
+- "entity_details": A list of classes and its details in the format, 
 "class_name - attributes - methods".
 For example: ["Engine - Attributes: +capacity: float, +number-of-cylinders: int - Methods: +start(), +brake(), +accelerate()" ]
 """,
@@ -44,7 +44,7 @@ Given an image containing a Flowchart diagram, extract the names of all nodes pr
 in the diagram.
 
 Return your result strictly as a JSON with the keys:
-- "n_entities": Number of entities present in the Flowchart diagram.
+- "n_entities": Number of nodes present in the Flowchart diagram.
 - "entity_names": A list of all node names present in the Flowchart diagram.
 """,
 
@@ -54,6 +54,7 @@ Given an image containing a Graph diagram, extract the names of all nodes presen
 in the diagram.
 
 Return your result strictly as a JSON with the keys:
+- "n_entities": Number of nodes present in the Graph diagram.
 - "entity_names": A list of all node names present in the Graph diagram.
 """,
 
@@ -86,7 +87,10 @@ Given an image containing a Sequence diagram, extract the details of all the mes
 in the diagram.
 
 Return your result strictly as a JSON with the keys:
+- "n_entities": Number of entities present in the Sequence diagram.
 - "entity_names": A list of all message names present in the Sequence diagram.
+- "entity_details": A list of classes and its details in the format, 
+"entity_name - actor/participant".
 """,
 
 # State Diagram
@@ -94,7 +98,24 @@ Return your result strictly as a JSON with the keys:
 Given an image containing a State diagram, extract the details of all the states present
 in the diagram.
 
+Ignore all prior assumptions and context about State Diagrams and
+donot make any assumption regarding the diagram while extracting the states.
+So, donot add any state based on your prior knowledge of the domain or context.
+Use only the visual information provided in the State Diagram to extract the 
+states present in the diagram.
+
+<Rules>
+Rule 1: Scan the image from Left to Right and Top to Bottom.
+Rule 2: Identify the number of states present in the diagram.
+Rule 3: ● represents the Start state and should be listed as '[*]' in the entity names. 
+Rule 4: ◎ represents the End state and should be listed as '[*]' in the entity names.
+Rule 5: Total number of states should include the Start and End states if present.
+Rule 6: Extract the name of each state and store it in a running list.
+Rule 7: Repeat until all states are extracted.
+</Rules>
+
 Return your result strictly as a JSON with the keys:
+- "n_entities": Number of states present in the State diagram. Also include Start and End states if present.
 - "entity_names": A list of all state names present in the State diagram.
 """,
 }
