@@ -6,7 +6,7 @@ triplets in the given Block Diagram.
 
 Ignore all prior assumptions and context about Block Diagrams and
 donot make any assumption regarding the diagram while extracting the block-edge-block triplets.
-So, donot add any edges based on your prior knowledge of the domain or context.
+So, donot hallucinate and add any edges based on your prior knowledge of the domain or context.
 Use only the visual information provided in the Block Diagram to extract the 
 block-edge-block triplets present in the diagram.
 
